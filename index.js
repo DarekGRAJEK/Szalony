@@ -3,10 +3,9 @@ const Discord = require("discord.js");
 const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true});
 const token = process.env.token;
+bot.commands = new Discord.Collection();
 let coins = require("./coins.json");
 let xp = require("./xp.json");
-bot.commands = new Discord.Collection();
-
 
 fs.readdir("./commands/", (err, files) => {
 
