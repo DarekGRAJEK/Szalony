@@ -7,7 +7,6 @@ bot.commands = new Discord.Collection();
 let coins = require("./coins.json");
 let xp = require("./xp.json");
 
-
 fs.readdir("./commands/", (err, files) => {
 
   if(err) console.log(err);
@@ -20,6 +19,7 @@ fs.readdir("./commands/", (err, files) => {
   jsfile.forEach((f, i) =>{
     let props = require(`./commands/${f}`);
     console.log(`${f} loaded!`);
+    bot.commands.set(props.help.name, props);
   });
 });
 
