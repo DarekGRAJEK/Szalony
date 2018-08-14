@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
      
+    await message.delete();
     if(!args[2]) return message.reply("Please ask a full question")
     let replies = ["Tak.", "Nie.", "Może.", "Nie wiem", "Napewno Tak.", "Napewno Nie.", "Nie Moge Odpowiedzieć na to pytanie."];
 
